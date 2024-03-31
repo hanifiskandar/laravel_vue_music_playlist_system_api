@@ -10,8 +10,20 @@ use App\Http\Resources\UserPlaylistResource;
 
 class UserPlaylistController extends Controller
 {
-    public function show($id){
-        $userPlaylist = UserPlaylist::with('music')->where('user_id',$id)->get();
+    public function index($id){
+
+        $search = request()->input('filter.search');
+
+        $userPlaylist = UserPlaylist::with('music')
+                        ->leftJoin('music','music.id','=', 'user_playlists.music_id')
+                        ->when($search, function ($query) use ($search) {
+                            return $query->where('music.name', 'LIKE', "%{$search}%")
+                                         ->orWhere('music.singer', 'LIKE', "%{$search}%")
+                                         ->orWhere('music.genre', 'LIKE', "%{$search}%");
+                        })
+                        ->where('user_id',$id)
+                       ->get();
+
         return new UserPlaylistResource($userPlaylist);  
     }
 }

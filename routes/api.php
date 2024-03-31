@@ -27,8 +27,9 @@ Route::get('lookup',[UserProfileController::class, 'lookup']);
 Route::post('update-profile/{id}', [UserProfileController::class, 'update']);
 
 //music-playlist
-Route::get('playlist/{id}',[UserPlaylistController::class, 'show']);
+Route::get('playlist/{id}',[UserPlaylistController::class, 'index']);
 
 //subscription
-Route::post('update-subscription/{id}', [UserSubscriptionController::class, 'update']);
+Route::post('update-subscription/{id}', [UserSubscriptionController::class, 'store']);
+Route::delete('delete-subscription/{id}', [UserSubscriptionController::class, 'destroy']);
 

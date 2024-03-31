@@ -13,7 +13,6 @@ use App\Models\UserHistory;
 use App\Models\UserPlaylist;
 use Illuminate\Support\Arr;
 
-
 class UserProfileController extends Controller
 {
     
@@ -27,25 +26,40 @@ class UserProfileController extends Controller
         // \Log::debug("update profile");
         // \Log::debug($request->all());
 
-        $userProfile = User::find($id);
-        $userProfile->name =  $request->name;
-        $userProfile->email =  $request->email;
-        $userProfile->phone =  $request->phone;
-        $userProfile->address1 =  $request->address1;
-        $userProfile->address2 =  $request->address2;
-        $userProfile->address3 =  $request->address3;
-        $userProfile->postcode =  $request->postcode;
-        $userProfile->city =  $request->city;
-        $userProfile->state =  $request->state;
-        $userProfile->save();
+        $validator = $this->getValidator($request);
 
-        $this->setGenres($request, $userProfile);
-        $this->setInterest($request, $userProfile);
-        $this->setHistory($request, $userProfile);
-        $this->setUserPlaylist($request, $userProfile);
+        if(!$validator->fails()){
+            $userProfile = User::find($id);
+            $userProfile->name =  $request->name;
+            $userProfile->email =  $request->email;
+            $userProfile->phone =  $request->phone;
+            $userProfile->address1 =  $request->address1;
+            $userProfile->address2 =  $request->address2;
+            $userProfile->address3 =  $request->address3;
+            $userProfile->postcode =  $request->postcode;
+            $userProfile->city =  $request->city;
+            $userProfile->state =  $request->state;
+            $userProfile->save();
+    
+            $this->setGenres($request, $userProfile);
+            $this->setInterest($request, $userProfile);
+            $this->setHistory($request, $userProfile);
+            $this->setUserPlaylist($request, $userProfile);
 
+            return response()->json([
+                'message' => __('Record successfully updated.'),
+                'data' => new UserResource($userProfile),
+            ]);
+        }
+        else
+        {
+            return response()->json([
+                'message' => __('Error saving record.'),
+                'errors' => $validator->errors(),
+            ], 500);
+        }
 
-        return new UserResource($userProfile);
+        // return new UserResource($userProfile);
     }
 
     public function lookup()
@@ -220,5 +234,17 @@ class UserProfileController extends Controller
 
         return $userProfile;
     }
+
+    private function getValidator($request)
+    {
+        $validator = \Validator::make($request->all(), [
+            'name' => 'required',
+            'phone' => 'required',
+            'selectedGenres' => 'required',
+        ]);
+
+        return $validator;
+    }
+
 
 }
