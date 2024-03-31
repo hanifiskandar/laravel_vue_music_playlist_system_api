@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.26, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: vimigo_hanif_db
+-- Host: 127.0.0.1    Database: laravel_vue_music_playlist_db
 -- ------------------------------------------------------
 -- Server version	8.0.26
 
@@ -56,7 +56,7 @@ CREATE TABLE `migrations` (
   `migration` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=88 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -65,7 +65,7 @@ CREATE TABLE `migrations` (
 
 LOCK TABLES `migrations` WRITE;
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-INSERT INTO `migrations` VALUES (78,'2014_10_12_000000_create_users_table',1),(79,'2014_10_12_100000_create_password_reset_tokens_table',1),(80,'2019_08_19_000000_create_failed_jobs_table',1),(81,'2019_12_14_000001_create_personal_access_tokens_table',1),(82,'2024_03_03_094338_create_music_table',1),(83,'2024_03_03_094519_create_user_playlists_table',1),(84,'2024_03_03_094607_create_user_subscription_table',1),(85,'2024_03_03_102543_create_user_interests_table',1),(86,'2024_03_03_102552_create_user_history_table',1),(87,'2024_03_04_215503_create_user_genres_table',1);
+INSERT INTO `migrations` VALUES (11,'2014_10_12_000000_create_users_table',1),(12,'2014_10_12_100000_create_password_reset_tokens_table',1),(13,'2019_08_19_000000_create_failed_jobs_table',1),(14,'2019_12_14_000001_create_personal_access_tokens_table',1),(15,'2024_03_03_094338_create_music_table',1),(16,'2024_03_03_094519_create_user_playlists_table',1),(17,'2024_03_03_094607_create_user_subscription_table',1),(18,'2024_03_03_102543_create_user_interests_table',1),(19,'2024_03_03_102552_create_user_history_table',1),(20,'2024_03_04_215503_create_user_genres_table',1);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -93,7 +93,7 @@ CREATE TABLE `music` (
 
 LOCK TABLES `music` WRITE;
 /*!40000 ALTER TABLE `music` DISABLE KEYS */;
-INSERT INTO `music` VALUES (1,'Perfect','Ed Sheeran','Ballad','2024-03-05 19:38:56','2024-03-05 19:38:56'),(2,'You belong with me','Taylor Swift','Pop','2024-03-05 19:38:56','2024-03-05 19:38:56'),(3,'Shake It Off','Taylor Swift','Pop','2024-03-05 19:38:56','2024-03-05 19:38:56'),(4,'Nothing Else Matters','Metallica','Rock','2024-03-05 19:38:56','2024-03-05 19:38:56'),(5,'Master Of Puppets','Metallica','Rock','2024-03-05 19:38:56','2024-03-05 19:38:56'),(6,'Stay','Justin Bieber','Pop','2024-03-05 19:38:56','2024-03-05 19:38:56'),(7,'Love Yourself','Justin Bieber','Pop','2024-03-05 19:38:56','2024-03-05 19:38:56'),(8,'7 rings','Ariana Grande','Pop','2024-03-05 19:38:56','2024-03-05 19:38:56'),(9,'In The End','Linkin Park','Metal','2024-03-05 19:38:56','2024-03-05 19:38:56'),(10,'Numb','Linkin Park','Metal','2024-03-05 19:38:56','2024-03-05 19:38:56');
+INSERT INTO `music` VALUES (1,'Perfect','Ed Sheeran','Ballad','2024-03-30 23:31:55','2024-03-30 23:31:55'),(2,'You belong with me','Taylor Swift','Pop','2024-03-30 23:31:55','2024-03-30 23:31:55'),(3,'Shake It Off','Taylor Swift','Pop','2024-03-30 23:31:55','2024-03-30 23:31:55'),(4,'Nothing Else Matters','Metallica','Rock','2024-03-30 23:31:55','2024-03-30 23:31:55'),(5,'Master Of Puppets','Metallica','Rock','2024-03-30 23:31:55','2024-03-30 23:31:55'),(6,'Stay','Justin Bieber','Pop','2024-03-30 23:31:55','2024-03-30 23:31:55'),(7,'Love Yourself','Justin Bieber','Pop','2024-03-30 23:31:55','2024-03-30 23:31:55'),(8,'7 rings','Ariana Grande','Pop','2024-03-30 23:31:55','2024-03-30 23:31:55'),(9,'In The End','Linkin Park','Metal','2024-03-30 23:31:55','2024-03-30 23:31:55'),(10,'Numb','Linkin Park','Metal','2024-03-30 23:31:55','2024-03-30 23:31:55');
 /*!40000 ALTER TABLE `music` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -168,7 +168,7 @@ CREATE TABLE `user_genres` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -177,7 +177,7 @@ CREATE TABLE `user_genres` (
 
 LOCK TABLES `user_genres` WRITE;
 /*!40000 ALTER TABLE `user_genres` DISABLE KEYS */;
-INSERT INTO `user_genres` VALUES (1,2,'Ballad','2024-03-05 19:39:45','2024-03-05 19:39:45');
+INSERT INTO `user_genres` VALUES (1,1,'Ballad','2024-03-31 00:53:38','2024-03-31 00:53:38'),(2,1,'Pop','2024-03-31 00:55:11','2024-03-31 00:55:11'),(3,1,'Rock','2024-03-31 00:56:52','2024-03-31 00:56:52');
 /*!40000 ALTER TABLE `user_genres` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -204,7 +204,7 @@ CREATE TABLE `user_history` (
 
 LOCK TABLES `user_history` WRITE;
 /*!40000 ALTER TABLE `user_history` DISABLE KEYS */;
-INSERT INTO `user_history` VALUES (1,2,1,'2024-03-05 19:39:45','2024-03-05 19:39:45');
+INSERT INTO `user_history` VALUES (1,1,1,'2024-03-31 00:53:38','2024-03-31 00:53:38');
 /*!40000 ALTER TABLE `user_history` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -231,7 +231,7 @@ CREATE TABLE `user_interests` (
 
 LOCK TABLES `user_interests` WRITE;
 /*!40000 ALTER TABLE `user_interests` DISABLE KEYS */;
-INSERT INTO `user_interests` VALUES (1,2,'Metallica','2024-03-05 19:39:45','2024-03-05 19:39:45');
+INSERT INTO `user_interests` VALUES (1,1,'Taylor Swift','2024-03-31 00:53:38','2024-03-31 00:53:38');
 /*!40000 ALTER TABLE `user_interests` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -249,7 +249,7 @@ CREATE TABLE `user_playlists` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -258,36 +258,8 @@ CREATE TABLE `user_playlists` (
 
 LOCK TABLES `user_playlists` WRITE;
 /*!40000 ALTER TABLE `user_playlists` DISABLE KEYS */;
-INSERT INTO `user_playlists` VALUES (1,2,1,'2024-03-05 19:39:45','2024-03-05 19:39:45'),(2,2,4,'2024-03-05 19:39:45','2024-03-05 19:39:45'),(3,2,5,'2024-03-05 19:39:45','2024-03-05 19:39:45');
+INSERT INTO `user_playlists` VALUES (62,1,1,'2024-03-31 01:00:12','2024-03-31 01:00:12'),(63,1,2,'2024-03-31 01:00:12','2024-03-31 01:00:12'),(64,1,3,'2024-03-31 01:00:12','2024-03-31 01:00:12'),(65,1,6,'2024-03-31 01:00:12','2024-03-31 01:00:12'),(66,1,7,'2024-03-31 01:00:12','2024-03-31 01:00:12'),(67,1,8,'2024-03-31 01:00:12','2024-03-31 01:00:12'),(68,1,4,'2024-03-31 01:00:12','2024-03-31 01:00:12'),(69,1,5,'2024-03-31 01:00:12','2024-03-31 01:00:12');
 /*!40000 ALTER TABLE `user_playlists` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `user_subscription`
---
-
-DROP TABLE IF EXISTS `user_subscription`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `user_subscription` (
-  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `user_id` bigint NOT NULL,
-  `type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `from_month` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `to_month` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `user_subscription`
---
-
-LOCK TABLES `user_subscription` WRITE;
-/*!40000 ALTER TABLE `user_subscription` DISABLE KEYS */;
-/*!40000 ALTER TABLE `user_subscription` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -306,7 +278,7 @@ CREATE TABLE `user_subscriptions` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -315,7 +287,7 @@ CREATE TABLE `user_subscriptions` (
 
 LOCK TABLES `user_subscriptions` WRITE;
 /*!40000 ALTER TABLE `user_subscriptions` DISABLE KEYS */;
-INSERT INTO `user_subscriptions` VALUES (1,2,'Basic','February','May','2024-03-05 19:40:02','2024-03-05 19:40:02');
+INSERT INTO `user_subscriptions` VALUES (1,1,'Premium','February','February','2024-03-31 06:27:29','2024-03-31 06:52:00'),(4,1,'Hi-Fi','May','May','2024-03-31 08:09:02','2024-03-31 08:09:02');
 /*!40000 ALTER TABLE `user_subscriptions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -353,7 +325,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Test User','test@example.com','2024-03-05 19:38:59','$2y$12$Y0orCgfNOe4PQI0GG7VtT.7l1p0epFXv3d/EEF2j50ToxJr4lryTW','w4JcMe5x7keq7XISk3heHSkQhmRXNJsrjMbXbbWRYYlJOdEyIMTlorT6iug8','770-420-3659','40888 Hilpert Walk Suite 540\nSouth Andres, IL 40336','51770 Rae Ridges\nBalistrerihaven, MS 88571-7916','89511 Maybelle Ranch\nFeestfurt, ID 41723-6259','18795','Nehaborough','Missouri','2024-03-05 19:39:00','2024-03-05 19:39:00'),(2,'madking','madking@gmail.com',NULL,'$2y$12$/JESiu3V7IhDrivgsMK5D.vUmbW08pu4O1yNYgec4OkF1C7jpSDL2',NULL,'1231231','qweasd','qwdqwd','ascxqwx','qweqwe','qwedqwd','qwd','2024-03-05 19:39:19','2024-03-05 19:39:45');
+INSERT INTO `users` VALUES (1,'Test User','test@example.com','2024-03-30 23:32:42','$2y$12$lXdY.n5NnXSz6k.2d5PYEeoetHye0fg/QkifDZaPPV3EZOwhQCu1q','Urpzaf7LgRqbZLJaHDIr1eVX17hi3OTTltMCR44X0YOMS1TJRvb2H4Tfop3u','928-228-07551','393 Adams Loaf Apt. 619\nSouth Camillaport, WA 53965','2030 Schmeler Trace\nRusseltown, PA 01602-7410','69523 Heidenreich Pike\nCyrilchester, HI 31533','06075111','Port Kendallside','District of Columbia','2024-03-30 23:32:42','2024-03-31 01:00:12'),(2,'madking','madking@gmail.com',NULL,'$2y$12$mWJh47sD1ucOkscZodhxleEDjq6U/12.jkeNVluRH/3qj9h.KwOI6',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2024-03-31 07:58:43','2024-03-31 07:58:43');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -366,4 +338,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-03-06 11:54:54
+-- Dump completed on 2024-04-01  0:44:30
